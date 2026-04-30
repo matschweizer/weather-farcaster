@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --sky-light:   #dff0ff;
+  --sky-mid:     #b3d8f5;
+  --sky-deep:    #6cb4ee;
+  --sky-accent:  #1a7fcf;
+  --sun:         #ffcc44;
+  --text-dark:   #0d2b45;
+  --text-mid:    #2e5f8a;
+  --text-soft:   #6a94b8;
+  --card-bg:     rgba(255,255,255,0.58);
+  --card-border: rgba(255,255,255,0.88);
+  --shadow:      0 8px 32px rgba(26,127,207,0.13);
+  --radius:      20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(160deg, #c8e8ff 0%, #e8f5ff 40%, #fff8e8 100%);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Atmospheric blobs */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 65% 45% at 15% 15%, rgba(108,180,238,.38) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 65% at 85% 80%, rgba(255,204,68,.2) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 60% 5%,  rgba(255,255,255,.55) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Animations ── */
+@keyframes fadeDown { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:none; } }
+@keyframes fadeUp   { from { opacity:0; transform:translateY(18px);  } to { opacity:1; transform:none; } }
+@keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+@keyframes spin     { to { transform:rotate(360deg); } }
+@keyframes pulse    { 0%,100%{ opacity:1; } 50%{ opacity:.5; } }
+@keyframes cardIn   { from { opacity:0; transform:translateY(20px) scale(.97); } to { opacity:1; transform:none; } }
