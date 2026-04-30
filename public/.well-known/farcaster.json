@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Weather Farcaster",
+    "iconUrl": "https://weather-farcaster.vercel.app/icons/icon.png",
+    "homeUrl": "https://weather-farcaster.vercel.app",
+    "imageUrl": "https://weather-farcaster.vercel.app/og-image.png",
+    "buttonTitle": "🌤️ Show Weather",
+    "splashImageUrl": "https://weather-farcaster.vercel.app/icons/splash.png",
+    "splashBackgroundColor": "#dff0ff"
+  }
+}
