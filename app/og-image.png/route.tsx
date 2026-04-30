@@ -1,10 +1,9 @@
 import { ImageResponse } from "next/og";
+import { NextRequest } from "next/server";
 
 export const runtime = "edge";
-export const contentType = "image/png";
-export const size = { width: 1200, height: 800 }; // 3:2 ratio as required by Farcaster
 
-export default function OgImage() {
+export async function GET(_req: NextRequest) {
   return new ImageResponse(
     (
       <div
@@ -14,28 +13,10 @@ export default function OgImage() {
           display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center",
           fontFamily: "sans-serif",
-          position: "relative",
-          overflow: "hidden",
         }}
       >
-        {/* Background blobs */}
-        <div style={{
-          position: "absolute", width: 600, height: 400,
-          borderRadius: "50%", left: -100, top: -100,
-          background: "rgba(108,180,238,.3)", filter: "blur(60px)",
-        }} />
-        <div style={{
-          position: "absolute", width: 500, height: 500,
-          borderRadius: "50%", right: -100, bottom: -100,
-          background: "rgba(255,204,68,.18)", filter: "blur(60px)",
-        }} />
-
-        {/* Content */}
         <div style={{ fontSize: 90, marginBottom: 20 }}>⛅</div>
-        <div style={{
-          fontSize: 62, fontWeight: 900, color: "#0d2b45",
-          letterSpacing: -2, marginBottom: 10,
-        }}>
+        <div style={{ fontSize: 62, fontWeight: 900, color: "#0d2b45", letterSpacing: -2, marginBottom: 10 }}>
           Weather-Farcaster
         </div>
         <div style={{ fontSize: 28, color: "#6a94b8", fontWeight: 300 }}>
@@ -52,6 +33,6 @@ export default function OgImage() {
         </div>
       </div>
     ),
-    { ...size }
+    { width: 1200, height: 800 }
   );
 }
