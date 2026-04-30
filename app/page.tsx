@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { sdk } from "@farcaster/miniapp-sdk";
+import sdk from "@farcaster/miniapp-sdk";
 import styles from "./page.module.css";
 
 // ── WMO weather code → emoji + German label ────────────────────────────────
